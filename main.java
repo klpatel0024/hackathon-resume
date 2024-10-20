@@ -18,47 +18,49 @@ public class main{
         String volunteering;
 
         System.out.println("ResYOUme: Resume Builder");
-        System.out.println("If entering multiple items at once, use \\; to seperate each input.");
+        System.out.println("If entering multiple items at once, use \";\" to seperate each input.");
 
         System.out.println("What's Your Name:");
-        name = scan.next();
+        name = scan.nextLine();
         resume.setName(name);
 
         System.out.println("What's Your Address:");
-        address = scan.next();
+        address = scan.nextLine();
         resume.setAddress(address);
 
         System.out.println("What's Your Phone:");
-        phone = scan.next();
+        phone = scan.nextLine();
         resume.setPhone(phone);
 
         System.out.println("What's Your Email:");
-        email = scan.next();
+        email = scan.nextLine();
         resume.setEmail(email);
 
         System.out.println("What's Your Objective:");
-        objective = scan.next();
+        objective = scan.nextLine();
         resume.setObjective(objective);
 
         System.out.println("What's Your Education:");
-        education = scan.next();
+        education = scan.nextLine();
         resume.setEducation(education);
 
         System.out.println("What's Your Work Experience:");
-        workExperience = scan.next();
+        workExperience = scan.nextLine();
         resume.setWorkExperience(workExperience);
 
         System.out.println("What's Your Skills:");
-        skills = scan.next();
+        skills = scan.nextLine();
         resume.setSkills(skills);
 
         System.out.println("What's Your Certifications:");
-        certifications = scan.next();
+        certifications = scan.nextLine();
         resume.setCertification(certifications);
 
         System.out.println("What's Your Volunteering Experiencing:");
-        volunteering = scan.next(); 
+        volunteering = scan.nextLine(); 
         resume.setVolunteering(volunteering);  
+
+        resume.print();
         
 
 

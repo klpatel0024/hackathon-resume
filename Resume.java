@@ -16,21 +16,18 @@ public class Resume
     private String volunteering;
     
     public Resume(){
-        name = "none";
-        address = "none";
-        phone = "none";
-        email = "none";
-        objective = "none";
-        education = "none";
-        workExperience = "none";
-        skills = "none";
-        certifications = "none";
-        volunteering = "none";
+        name = "";
+        address = "";
+        phone = "";
+        email = "";
+        objective = "";
+        education = "";
+        workExperience = "";
+        skills = "";
+        certifications = "";
+        volunteering = "";
     }
-    
-    public Resume(String n, String a, String p, String e, String o, String ed, String w, String s,  String c, String v){
-        name = n; address = a; phone = p; email = e; objective = o; education = ed; workExperience = w; skills = s; certifications = c; volunteering = v;
-    }
+
 
     public String getName(){return name;}
     public void setName(String n){name = n;}
@@ -99,15 +96,15 @@ public class Resume
         
         try {
             PrintWriter writer = new PrintWriter("resume.txt", "UTF-8");
-            writer.printf("%-25s\n", name.toUpperCase());
+            writer.printf("%25s\n", name.toUpperCase());
             writer.printf("%s\t|\t%s\t|\t%s\n\n", address, email, phone);
             if(objective == null)
             writer.printf("%s\n%s", "OBJECTIVE", objective);
-            writer.printf("%s\n%s", "EDUCATION", education);
-            writer.printf("%s\n%s", "WORK EXPERIENCE", workExperience);
-            writer.printf("%s\n%s", "SKILLS", skills);
-            writer.printf("%s\n%s", "CERTIFICATIONS", certifications);
-            writer.printf("%s\n%s", "VOLUNTEERING", volunteering);
+            writer.printf("\n%s\n%s", "EDUCATION", education);
+            writer.printf("\n%s\n%s", "WORK EXPERIENCE", workExperience);
+            writer.printf("\n%s\n%s", "SKILLS", skills);
+            writer.printf("\n%s\n%s", "CERTIFICATIONS", certifications);
+            writer.printf("\n%s\n%s", "VOLUNTEERING", volunteering);
             writer.close();
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
