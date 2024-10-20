@@ -11,7 +11,21 @@ public class Resume
     private String certifications;
     private String volunteering;
     
-
+    public Resume(){
+        name = "none";
+        address = "none";
+        phone = "none";
+        email = "none";
+        objective = "none";
+        education = "none";
+        workExperience = "none";
+        skills = "none";
+        certifications = "none";
+        volunteering = "none";
+    }
+    public Resume(String n, String a, String p, String e, String o, String ed, String w, String s,  String c, String v){
+        name = n; address = a; phone = p; email = e; objective = o; education = ed; workExperience = w; skills = s; certifications = c; volunteering = v;
+    }
 
     public String getName(){return name;}
     public void setName(String n){name = n;}
@@ -29,7 +43,7 @@ public class Resume
     public void setObjective(String o){objective = o;}
 
     public String getEducation(){return education;}
-    public String setEducation(String e){education = e;}
+    public void setEducation(String e){education = e;}
 
     public String getWorkExperience(){return workExperience;}
     public void setWorkExperience(String w){workExperience = w;}
