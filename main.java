@@ -63,7 +63,7 @@ public class main{
 
         resume.print();
         
-        System.out.println("Resume created! Check the directory for the seperate text file labled \"Resume.java\" containing your brand new resume!");
+        System.out.println("Resume created! Check the directory for the seperate text file labled \"resume.txt\" containing your brand new resume!");
 
 
     }
