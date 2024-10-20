@@ -1,5 +1,4 @@
 # hackathon-resume
-# hackathon-resume
 
 
 Esteemed Users,
