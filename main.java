@@ -19,6 +19,7 @@ public class main{
 
         System.out.println("ResYOUme: Resume Builder");
         System.out.println("If entering multiple items at once, use \";\" to seperate each input. If you have nothing to put in a category please enter \"none\"");
+        System.out.println("\n--------------------------------------------------------------------------------------------------------------------------------------\n");
 
         System.out.println("What's Your Name:");
         name = scan.nextLine();
@@ -62,6 +63,7 @@ public class main{
 
         resume.print();
         
+        System.out.println("Resume created! Check the directory for the seperate text file labled \"Resume.java\" containing your brand new resume!");
 
 
     }
