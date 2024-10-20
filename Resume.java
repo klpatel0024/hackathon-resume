@@ -2,6 +2,8 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
+import javax.swing.GroupLayout.Alignment;
+
 public class Resume
 {
     private String name;
@@ -42,7 +44,13 @@ public class Resume
     public void setEmail(String e){email = e;}
 
     public String getObjective(){return objective;}
-    public void setObjective(String o){objective = o;}
+    public void setObjective(String o){
+        String[] objLines = o.split(";");
+        for(int i = 0; i<objLines.length; i++)
+        {
+            objective+= objLines[i] + "\n";
+        }
+    }
 
     public String getEducation(){return education;}
     public void setEducation(String e){
@@ -96,15 +104,20 @@ public class Resume
         
         try {
             PrintWriter writer = new PrintWriter("resume.txt", "UTF-8");
-            writer.printf("%25s\n", name.toUpperCase());
-            writer.printf("%s\t|\t%s\t|\t%s\n\n", address, email, phone);
-            if(objective == null)
-            writer.printf("%s\n%s", "OBJECTIVE", objective);
-            writer.printf("\n%s\n%s", "EDUCATION", education);
-            writer.printf("\n%s\n%s", "WORK EXPERIENCE", workExperience);
-            writer.printf("\n%s\n%s", "SKILLS", skills);
-            writer.printf("\n%s\n%s", "CERTIFICATIONS", certifications);
-            writer.printf("\n%s\n%s", "VOLUNTEERING", volunteering);
+            writer.printf("%50s\n", name.toUpperCase());
+            writer.printf("%s\t|\t%s\t|\t%s\n\n%s\n\n", address, email, phone, "______________________________________________________________________________________________________");
+            if(!objective.equals("none\n"))
+                writer.printf("%s\n%s", "OBJECTIVE", objective);
+            if(!education.equals("none\n"))
+                writer.printf("\n%s\n%s", "EDUCATION", education);
+            if(!workExperience.equals("none\n"))
+                writer.printf("\n%s\n%s", "WORK EXPERIENCE", workExperience);
+            if(!skills.equals("none\n"))
+                writer.printf("\n%s\n%s", "SKILLS", skills);
+            if(!certifications.equals("none\n"))
+                writer.printf("\n%s\n%s", "CERTIFICATIONS", certifications);
+            if(!volunteering.equals("none\n"))
+                writer.printf("\n%s\n%s", "VOLUNTEERING", volunteering);
             writer.close();
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -124,3 +137,4 @@ public class Resume
     }
 
 }
+

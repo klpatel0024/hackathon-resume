@@ -18,7 +18,7 @@ public class main{
         String volunteering;
 
         System.out.println("ResYOUme: Resume Builder");
-        System.out.println("If entering multiple items at once, use \";\" to seperate each input.");
+        System.out.println("If entering multiple items at once, use \";\" to seperate each input. If you have nothing to put in a category please enter \"none\"");
 
         System.out.println("What's Your Name:");
         name = scan.nextLine();
