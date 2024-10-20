@@ -1,7 +1,3 @@
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-
 public class Resume
 {
     private String name;
@@ -33,82 +29,18 @@ public class Resume
     public void setObjective(String o){objective = o;}
 
     public String getEducation(){return education;}
-    public void setEducation(String e){
-        String[] eduLines = e.split(";");
-        for(int i = 0; i<eduLines.length; i++)
-        {
-            education+= eduLines[i] + "\n";
-        }
-         
-    }
-
+    public String setEducation(String e){education = e;}
 
     public String getWorkExperience(){return workExperience;}
-    public void setWorkExperience(String w){
-        String[] workLines = w.split(";");
-        for(int i = 0; i<workLines.length; i++)
-        {
-            workExperience+= workLines[i] + "\n";
-        }
-    }
+    public void setWorkExperience(String w){workExperience = w;}
 
     public String getSkills(){return skills;}
-    public void setSkills(String s){
-        String[] skillLines = s.split(";");
-        for(int i = 0; i<skillLines.length; i++)
-        {
-            skills+= "-\t" + skillLines[i] + "\n";
-        }
-    }
+    public void setSkills(String s){skills = s;}
 
     public String getCertifications(){return certifications;}
-    public void setCertification(String c){
-        String[] certLines = c.split(";");
-        for(int i = 0; i<certLines.length; i++)
-        {
-            certifications += "-\t" + certLines[i] + "\n";
-        }
-    }
+    public void setCertification(String c){certifications = c;}
 
     public String getVolunteering(){return volunteering;}
-    public void setVolunteering(String v){
-        String[] volLines = v.split(";");
-        for(int i = 0; i<volLines.length; i++)
-        {
-            volunteering+= volLines[i] + "\n";
-        }
-    }
-
-    public void print()
-    {
-        
-        try {
-            PrintWriter writer = new PrintWriter("resume.txt", "UTF-8");
-            writer.printf("%-25s\n", name.toUpperCase());
-            writer.printf("%s\t|\t%s\t|\t%s\n\n", address, email, phone);
-            if(objective == null)
-            writer.printf("%s\n%s", "OBJECTIVE", objective);
-            writer.printf("%s\n%s", "EDUCATION", education);
-            writer.printf("%s\n%s", "WORK EXPERIENCE", workExperience);
-            writer.printf("%s\n%s", "SKILLS", skills);
-            writer.printf("%s\n%s", "CERTIFICATIONS", certifications);
-            writer.printf("%s\n%s", "VOLUNTEERING", volunteering);
-            writer.close();
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            System.out.println("File not Found");
-        } catch (UnsupportedEncodingException e) {
-            // TODO Auto-generated catch block
-            System.out.println(e.getMessage());
-        }
-
-
-    }
-
-    public String toString()
-    {
-        return String.format("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n", "RESUME:", name, address, phone, email, 
-                                objective, education, workExperience, skills, certifications, volunteering); 
-    }
+    public void setVolunteering(String v){volunteering = v;}
 
 }
